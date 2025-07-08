@@ -1,11 +1,13 @@
 mod variables;
 mod ownership_and_borrowing;
 mod functions_and_return_types;
+mod structs_and_impls;
 
 use crate::variables::declare_variables;
 use crate::ownership_and_borrowing::error;
 use crate::ownership_and_borrowing::correct;
 use crate::functions_and_return_types::call_greet;
+use crate::structs_and_impls::Message;
 
 // Main function to run the program
 // This function is the entry point of the Rust program
@@ -41,4 +43,13 @@ fn main() {
     // This function demonstrates how to define and call functions in Rust
     call_greet();
     println!("----------------------------------------"); 
+    // Create a new instance of the Message struct
+    // This will execute the code in the `Message` struct's `new` method
+    // which is defined in the `structs_and_impls` module
+    let message = Message::new("greeting", "Hello, Rust!");
+    // Call the `print` method on the `message` instance
+    // This will execute the code in the `print` method of the `Message` struct
+    // which is defined in the `structs_and_impls` module
+    message.print();
+    println!("----------------------------------------");
 }
